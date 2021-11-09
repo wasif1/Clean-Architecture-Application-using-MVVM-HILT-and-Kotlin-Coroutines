@@ -7,15 +7,31 @@
     android:background="@color/white"
     tools:context=".presentation.MainActivity">
 
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_700"
+        android:gravity="center|start"
+        android:paddingStart="15dp"
+        android:paddingLeft="15dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/name" />
 
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_below="@+id/name"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
