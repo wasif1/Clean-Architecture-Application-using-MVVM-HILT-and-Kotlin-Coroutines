@@ -1,0 +1,2 @@
+rootProject.name = "Dubizzle Test"
+include ':app'
