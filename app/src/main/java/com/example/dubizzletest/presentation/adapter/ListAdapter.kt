@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dubizzletest.databinding.ItemMainBinding
 import com.example.dubizzletest.model.ResultsItem
 import com.example.dubizzletest.presentation.DetailsActivity
+import com.example.dubizzletest.presentation.DetailsActivityJava
 
 class ListAdapter(private val context : Context) : ListAdapter<ResultsItem, com.example.dubizzletest.presentation.adapter.ListAdapter.ViewHolder>(DataDiffCallBack()) {
 
@@ -40,7 +41,12 @@ class ListAdapter(private val context : Context) : ListAdapter<ResultsItem, com.
         fun bind(context: Context, item: ResultsItem) {
             binding.name.text = item.name
             binding.root.setOnClickListener {
-                context.startActivity(Intent(context, DetailsActivity::class.java).apply {
+                //KOTLIN DETAILS ACTIVITY
+//                context.startActivity(Intent(context, DetailsActivity::class.java).apply {
+//                    putExtra("object", item)
+//                })
+                //JAVA DETAILS ACTIVITY - FOR BONUS
+                context.startActivity(Intent(context, DetailsActivityJava::class.java).apply {
                     putExtra("object", item)
                 })
             }
