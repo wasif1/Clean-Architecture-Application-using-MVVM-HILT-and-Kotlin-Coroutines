@@ -13,6 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ListViewModel @Inject constructor(private var usecase: ListUsecase) : ViewModel() {
+
     private val _response: MutableLiveData<ResultData<ListResponse>> = MutableLiveData()
     val response: LiveData<ResultData<ListResponse>> = _response
 
