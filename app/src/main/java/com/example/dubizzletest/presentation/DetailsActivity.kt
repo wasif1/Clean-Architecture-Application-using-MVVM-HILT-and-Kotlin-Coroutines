@@ -9,8 +9,15 @@ import com.example.dubizzletest.model.ResultsItem
 
 class DetailsActivity : AppCompatActivity() {
 
+    /**
+     * VARIABLE DECLARATION
+     */
     private lateinit var binding: ActivityDetailsBinding
 
+    /**
+     * VIEW BINDING WITH ACTIVITY
+     * INITIALISE VARIABLES
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsBinding.inflate(layoutInflater)
@@ -18,6 +25,10 @@ class DetailsActivity : AppCompatActivity() {
         setData()
     }
 
+    /**
+     * INTENT DATA FROM MAIN CLASS
+     * SETTING THE DATA TO THE DESIRED FIELDS
+     */
     private fun setData() {
         val parcelable = intent.extras?.getParcelable<ResultsItem>("object")
         (getString(R.string.create_at) + parcelable?.createdAt).also { binding.createAt.text = it }

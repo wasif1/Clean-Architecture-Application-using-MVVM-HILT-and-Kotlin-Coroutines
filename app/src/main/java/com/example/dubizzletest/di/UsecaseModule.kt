@@ -11,6 +11,9 @@ import dagger.hilt.android.components.ActivityRetainedComponent
 @Module
 object UsecaseModule {
 
+    /**
+     * UseCases
+     */
     @Provides
     fun providesDataUsecase(repository: ListRepository): ListUsecase {
         return ListUsecase(repository)

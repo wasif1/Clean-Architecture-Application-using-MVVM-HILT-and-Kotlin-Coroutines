@@ -13,10 +13,19 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    /**
+     * VARIABLE DECLARATIONS
+     */
     private lateinit var binding: ActivityMainBinding
     private val viewModel: ListViewModel by viewModels()
     private lateinit var listAdapter: ListAdapter
 
+    /**
+     * VIEW BINDING WITH ACTIVITY
+     * INITIALISE VARIABLES
+     * CALLING API FOR THE DATA
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -25,6 +34,22 @@ class MainActivity : AppCompatActivity() {
         callApi()
     }
 
+    /**
+     * INITIALISE THE ADAPTER
+     * SET THE ADAPTER TO THE RECYCLER VIEW
+     */
+    private fun init() {
+        listAdapter = ListAdapter(this)
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = listAdapter
+        }
+    }
+
+    /**
+     * API CALL TO GET THE DATA
+     * AND SET THE DATA INTO THE LIST
+     */
     private fun callApi() {
         binding.progress.visibility = View.VISIBLE
         viewModel.listItems()
@@ -43,13 +68,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-    }
-
-    private fun init() {
-        listAdapter = ListAdapter(this)
-        binding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = listAdapter
-        }
     }
 }

@@ -11,8 +11,11 @@ import dagger.hilt.android.components.ActivityRetainedComponent
 @Module
 object RepositoryModule {
 
+    /**
+     * Repositories
+     */
     @Provides
-    fun providesSearchRepo(apiService: ApiService): ListRepository {
+    fun providesRepo(apiService: ApiService): ListRepository {
         return ListRepository(apiService = apiService)
     }
 }

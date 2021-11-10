@@ -23,6 +23,10 @@ class ListAdapter(private val context : Context) : ListAdapter<ResultsItem, com.
             oldItem == newItem
     }
 
+    /**
+     * CREATING VIEW
+     * FOR EACH ITEM
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ItemMainBinding.inflate(
@@ -33,10 +37,17 @@ class ListAdapter(private val context : Context) : ListAdapter<ResultsItem, com.
         )
     }
 
+    /**
+     * VIEW BINDER
+     */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(context, getItem(position))
     }
 
+    /**
+     * VIEW HOLDER
+     * SET DATA TO VIEWS
+     */
     class ViewHolder(private val binding: ItemMainBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(context: Context, item: ResultsItem) {
@@ -47,9 +58,10 @@ class ListAdapter(private val context : Context) : ListAdapter<ResultsItem, com.
             }
             binding.root.setOnClickListener {
                 //KOTLIN DETAILS ACTIVITY
-//                context.startActivity(Intent(context, DetailsActivity::class.java).apply {
-//                    putExtra("object", item)
-//                })
+                //context.startActivity(Intent(context, DetailsActivity::class.java).apply {
+                //    putExtra("object", item)
+                //})
+
                 //JAVA DETAILS ACTIVITY - FOR BONUS PART 2
                 context.startActivity(Intent(context, DetailsActivityJava::class.java).apply {
                     putExtra("object", item)

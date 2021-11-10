@@ -14,16 +14,29 @@ import retrofit2.converter.gson.GsonConverterFactory
 @InstallIn(SingletonComponent::class)
 @Module
 object NetworkModule {
+
+    /**
+     * BASE URL FOR
+     * API CALLS
+     */
     @Provides
     fun providesBaseUrl(): String {
         return Constants.BASE_URL
     }
 
+    /**
+     * HttpLoggingInterceptor
+     * FOR RETROFIT CLIENT
+     */
     @Provides
     fun providesLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
+    /**
+     * OkHttpClient BUILDER INITIALISE
+     * AND SET THE HttpLoggingInterceptor
+     */
     @Provides
     fun providesOkHttpClient(
         logger: HttpLoggingInterceptor,
@@ -33,11 +46,19 @@ object NetworkModule {
         return okHttpClient.build()
     }
 
+    /**
+     * GsonConverterFactory FOR
+     * PARSING API RESPONSE
+     */
     @Provides
     fun providesConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
     }
 
+    /**
+     * Retrofit API CLIENT
+     * INTEGRATION FOR API CALLS
+     */
     @Provides
     fun providesRetrofit(
         baseUrl: String,
@@ -51,6 +72,10 @@ object NetworkModule {
             .build()
     }
 
+    /**
+     * RETROFIT BIND WITH
+     * API SERVICES
+     */
     @Provides
     fun providesAPIService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)

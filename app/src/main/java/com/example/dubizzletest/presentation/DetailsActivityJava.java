@@ -3,7 +3,6 @@ package com.example.dubizzletest.presentation;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,8 +16,15 @@ import java.text.MessageFormat;
 
 public class DetailsActivityJava extends AppCompatActivity {
 
+    /**
+     * VARIABLE DECLARATION
+     */
     private ActivityDetailsBinding binding;
 
+    /**
+     * VIEW BINDING WITH ACTIVITY
+     * INITIALISE VARIABLES
+     */
     @Override
     protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +33,10 @@ public class DetailsActivityJava extends AppCompatActivity {
         setData();
     }
 
+    /**
+     * INTENT DATA FROM MAIN CLASS
+     * SETTING THE DATA TO THE DESIRED FIELDS
+     */
     private void setData() {
         if (getIntent() == null) return;
         ResultsItem item = getIntent().getExtras().getParcelable("object");
