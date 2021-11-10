@@ -10,7 +10,7 @@ data class ListResponse(
 	val pagination: Pagination? = null,
 
 	@field:SerializedName("results")
-	val results: List<ResultsItem?>? = null
+	var results: List<ResultsItem?>? = null
 )
 
 @Parcelize

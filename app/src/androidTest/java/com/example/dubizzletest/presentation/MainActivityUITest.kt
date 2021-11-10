@@ -32,6 +32,10 @@ class MainActivityUITest : TestCase(){
     var activityRule: ActivityTestRule<MainActivity>
         = ActivityTestRule(MainActivity::class.java)
 
+    @get:Rule
+    var activityRule2: ActivityTestRule<DetailsActivityJava>
+        = ActivityTestRule(DetailsActivityJava::class.java)
+
     @Test
     fun testSampleRecyclerVisible() {
         Espresso.onView(withId(com.example.dubizzletest.R.id.recyclerView))

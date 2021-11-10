@@ -1,6 +1,6 @@
 package com.example.dubizzletest.di
 
-import com.example.dubizzletest.domain.ListRepository
+import com.example.dubizzletest.repository.ListRepository
 import com.example.dubizzletest.usecase.ListUsecase
 import dagger.Module
 import dagger.Provides

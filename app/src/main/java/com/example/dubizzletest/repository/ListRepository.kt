@@ -1,4 +1,4 @@
-package com.example.dubizzletest.domain
+package com.example.dubizzletest.repository
 
 import com.example.dubizzletest.model.ListResponse
 import com.example.dubizzletest.network.ApiService
