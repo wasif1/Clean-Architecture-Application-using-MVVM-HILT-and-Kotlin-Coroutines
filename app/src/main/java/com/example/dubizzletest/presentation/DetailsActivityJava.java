@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.dubizzletest.R;
+import com.example.dubizzletest.cacheFramework.BitmapUtils;
 import com.example.dubizzletest.databinding.ActivityDetailsBinding;
 import com.example.dubizzletest.model.ResultsItem;
 
@@ -52,10 +53,14 @@ public class DetailsActivityJava extends AppCompatActivity {
             if (item.getImageIds() != null && item.getImageIds().size() > 0 && !TextUtils.isEmpty(item.getImageIds().get(0)))
                 binding.id.setText(MessageFormat.format("{0} {1}", getString(R.string.id), item.getImageIds().get(0)));
             if (item.getImageUrls() != null && item.getImageUrls().size() > 0) {
-                Glide.with(binding.image).load(item.getImageUrls().get(0)).into(binding.image);
+                //Cache Mechanism
+                BitmapUtils.display(this, binding.image, item.getImageUrls().get(0));
+                //Glide.with(binding.image).load(item.getImageUrls().get(0)).into(binding.image);
             }
             if (item.getImageUrlsThumbnails() != null && item.getImageUrlsThumbnails().size() > 0) {
-                Glide.with(binding.thumbnail).load(item.getImageUrlsThumbnails().get(0)).into(binding.thumbnail);
+                //Cache Mechanism
+                BitmapUtils.display(this, binding.thumbnail, item.getImageUrlsThumbnails().get(0));
+                //Glide.with(binding.thumbnail).load(item.getImageUrlsThumbnails().get(0)).into(binding.thumbnail);
             }
             binding.toolbar.setNavigationOnClickListener(v -> finish());
         }

@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
      * AND SET THE DATA INTO THE LIST
      */
     private fun callApi() {
-        binding.progress.visibility = View.VISIBLE
         viewModel.listItems()
         viewModel.response.observe(this, {
             run {
@@ -61,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                         binding.progress.visibility = View.GONE
                     }
                     is ResultData.Loading -> {
-
+                        binding.progress.visibility = View.VISIBLE
                     }
                     else -> {
                     }

@@ -6,8 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
+    android:elevation="5dp"
+    android:translationZ="5dp"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="@color/grey"
     app:cardCornerRadius="10dp">
 
     <LinearLayout
@@ -26,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             tools:text="This is only for the test.." />

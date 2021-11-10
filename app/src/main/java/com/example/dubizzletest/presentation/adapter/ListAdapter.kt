@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.dubizzletest.cacheFramework.BitmapUtils
 import com.example.dubizzletest.databinding.ItemMainBinding
 import com.example.dubizzletest.model.ResultsItem
 import com.example.dubizzletest.presentation.DetailsActivityJava
@@ -53,8 +54,9 @@ class ListAdapter(private val context : Context) : ListAdapter<ResultsItem, com.
         fun bind(context: Context, item: ResultsItem) {
             binding.name.text = item.name
             if(item.imageUrlsThumbnails!!.isNotEmpty() && !TextUtils.isEmpty(item.imageUrlsThumbnails[0])) {
-                Glide.with(binding.thumbnail).load(item.imageUrlsThumbnails[0])
-                    .into(binding.thumbnail)
+                //Cache Mechanism
+                BitmapUtils.display(context, binding.thumbnail, item.imageUrlsThumbnails[0])
+                //Glide.with(binding.thumbnail).load(item.imageUrlsThumbnails[0]).into(binding.thumbnail)
             }
             binding.root.setOnClickListener {
                 //KOTLIN DETAILS ACTIVITY
