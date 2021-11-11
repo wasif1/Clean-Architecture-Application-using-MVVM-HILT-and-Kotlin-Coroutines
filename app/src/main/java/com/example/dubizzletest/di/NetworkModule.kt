@@ -1,5 +1,6 @@
 package com.example.dubizzletest.di
 
+import com.example.dubizzletest.BuildConfig
 import com.example.dubizzletest.network.ApiService
 import com.example.dubizzletest.utils.Constants
 import dagger.Module
@@ -21,7 +22,7 @@ object NetworkModule {
      */
     @Provides
     fun providesBaseUrl(): String {
-        return Constants.BASE_URL
+        return BuildConfig.BASE_URL
     }
 
     /**

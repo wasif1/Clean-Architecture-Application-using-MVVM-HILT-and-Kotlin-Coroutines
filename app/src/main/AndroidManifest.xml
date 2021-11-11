@@ -14,11 +14,16 @@
         android:theme="@style/Theme.DubizzleTest">
         <activity
             android:name=".presentation.DetailsActivity"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".presentation.DetailsActivityJava"
+            android:exported="true"
             android:screenOrientation="portrait" />
-        <activity android:name=".presentation.MainActivity">
+        <activity
+            android:name=".presentation.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
