@@ -16,9 +16,9 @@ This is a clean architecture app example built with
 
 
 ##Screenshots 
-![main](https://github.com/wasif1/DubizzleTest/app/assets/images/main.jpg)
+![main](https://github.com/wasif1/DubizzleTest/blob/master/app/screenshots/main.jpg)
 
-![main](https://github.com/wasif1/DubizzleTest/app/assets/images/details.jpg)
+![main](https://github.com/wasif1/DubizzleTest/blob/master/app/screenshots/details.jpg)
 
 
 
