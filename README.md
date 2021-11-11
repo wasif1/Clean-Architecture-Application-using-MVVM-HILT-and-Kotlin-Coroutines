@@ -16,9 +16,9 @@ This is a clean architecture app example built with
 
 
 ##Screenshots 
-![main](https://myoctocat.com/assets/images/main.jpg)
+![main](https://github.com/wasif1/DubizzleTest/app/assets/images/main.jpg)
 
-![main](https://myoctocat.com/assets/images/details.jpg)
+![main](https://github.com/wasif1/DubizzleTest/app/assets/images/details.jpg)
 
 
 
