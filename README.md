@@ -25,7 +25,7 @@ This is a clean architecture app example built with
 - Production
 
 
-## Code Structure:
+## Code Structure
 
 | Package Details |  |
 | ------------- | ------------- |
