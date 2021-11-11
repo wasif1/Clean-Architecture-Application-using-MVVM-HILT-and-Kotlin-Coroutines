@@ -1,28 +1,14 @@
 
 
-# DubizzleTest Application
+# Clean Architecture Application using MVVP, HILT and Kotlin Coroutines
 
-```
-## Technical Requirements 
-
-1. The app has automated tests: Unit, Integration, UI. ✅
-2. Clean Architecture ✅
-3. Your software should easily accommodate possible future requirement changes ✅
-
-
-## Bonus Points 
-
-1. Implement an image caching mechanism by creating your own framework that is used by the app in both screens. 
-   Design the framework in a way that the image caching framework can be reused in other applications. ✅
-2. The app has one screen written in Java. ✅
-
-```
 
 ## Project Implementation Details
 
 This is a clean architecture app example built with
 
 - MVVM
+- Clean Architecture
 - Kotlin Coroutines
 - Dagger Hilt
 - Retrofit
@@ -37,6 +23,21 @@ This is a clean architecture app example built with
 ## Flavors 
 - Staging
 - Production
+
+
+## Code Structure:
+
+| Package Details |  |
+| ------------- | ------------- |
+| cacheFramework | Image cache mechanism, all classes in java language. |
+| di(Dependency Injection) | Network classes for Api Requests |
+| model | Data classes for Api |
+| network | Api End Points |
+| presentation | UI of the Application |
+| repository | Communicate between network & usecase |
+| usecase | Communicate between viewModel & Repository |
+| utils | Utility classes |
+
 
 ## Screenshots 
 | Main Screen  | Details Screen |
