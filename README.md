@@ -1,6 +1,6 @@
 
 
-# Clean Architecture Application using MVVP, HILT and Kotlin Coroutines
+# Clean Architecture Application using MVVM, HILT and Kotlin Coroutines
 
 
 ## Project Implementation Details
